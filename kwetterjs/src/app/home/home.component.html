@@ -1,3 +1,31 @@
-<p>
-  home works!
-</p>
+<body>
+  <!-- <form>
+    <button (click)="logOut()">Logout</button>
+    <button (click)="goToProfile()">Profile</button>
+  </form> -->
+  <div class="page-container">
+    <form>
+      <textarea></textarea>
+      <button (click)="createTweet()">Tweet!</button>
+    </form>
+    <div class="tweets-container">
+      <form>
+        <div class="tweet" *ngFor="let tweet of allTweets">
+          {{tweet.user.username}} <br />
+          {{tweet.message}}
+        </div>
+      </form>
+    </div>
+    <!-- <div class="users-container">
+      <form>
+        Following: <button (click)="setListNr(1)">0</button><br />
+        Followers: <button (click)="setListNr(2)">0</button><br />
+        <input style="text"/>
+        <button (click)="setListNr(3)">
+          <div *ngFor="user in getUserList()">
+            user.username;
+          </div>
+      </form>
+    </div> -->
+  </div>
+</body>

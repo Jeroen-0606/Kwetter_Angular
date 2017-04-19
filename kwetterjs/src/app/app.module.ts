@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { routes } from './app.router';
+import { ProfileComponent } from './profile/profile.component';
+import { AllTweetsService } from './all-tweets.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { routes } from './app.router';
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [AllTweetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

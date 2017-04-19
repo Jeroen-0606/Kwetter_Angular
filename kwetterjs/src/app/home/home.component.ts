@@ -1,18 +1,21 @@
 import {Component, Output, EventEmitter} from "@angular/core";
+import { AllTweetsService } from '../all-tweets.service';
 
 @Component({
   selector: "home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
-
 export class HomeComponent {
-  // constructor(public http: Http) {
-  //   this.http = http;
-  //   this.http.get('')
-  //   .map(res => res.json())
-  //   .subscribe((user) => {
-  //     console.log(user);
-  //   })
-  // }
+  private allTweets : Array<any>;
+
+  constructor(private allTweetsService : AllTweetsService) {
+    this.getAllTweets();
+    console.log(this.allTweets);
+  }
+
+  private getAllTweets() : void {
+    this.allTweetsService.getAllTweets('piet@gmail.com')
+      .subscribe(allTweets => this.allTweets = allTweets);
+  }
 }
