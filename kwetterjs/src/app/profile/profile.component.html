@@ -1,3 +1,16 @@
-<p>
-  profile works!
-</p>
+<body>
+    <nav>
+      <a (click)="logout()" routerLink="/login" routerLinkActive="Active" style="float: right;">Logout</a>
+      <a routerLink="/home" routerLinkActive="Active">Home</a>
+    </nav>
+    <div class="page-container">
+        <form>
+            <div class="profile-picture"><img width="300px" src="{{user.photo}}"/></div><br />
+            Username: <input [(ngModel)]="user.username" name="username" disabled="true"/><br />
+            Naam: <input [(ngModel)]="user.name" name="name"/><br />
+            Biografie: <input [(ngModel)]="user.bio" name="bio"/><br />
+            Locatie: <input [(ngModel)]="user.location" name="location"/><br />
+            <button (click)="updateUser()">Save</button>
+        </form>
+    </div>
+</body>

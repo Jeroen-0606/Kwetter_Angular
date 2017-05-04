@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
@@ -12,7 +12,12 @@ export class AllTweetsService {
   }
 
   public getAllTweets(email : string) : Observable<any> {
-    return this.http.get(`${this.apiPrefix}/getOwnTweets/${email}`)
+    return this.http.get(`${this.apiPrefix}/getAllTweets/${email}`)
+      .map(response => response.json());
+  }
+
+  public createTweet(email : string, message : string) : Observable<any> {
+    return this.http.get(`${this.apiPrefix}/createTweet/${message}/${email}`)
       .map(response => response.json());
   }
 }

@@ -9,12 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { routes } from './app.router';
 import { ProfileComponent } from './profile/profile.component';
 import { AllTweetsService } from './all-tweets.service';
+import { UserService } from './user.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { AllTweetsService } from './all-tweets.service';
     HttpModule,
     routes
   ],
-  providers: [AllTweetsService],
+  providers: [AllTweetsService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

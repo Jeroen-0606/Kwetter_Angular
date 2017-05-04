@@ -1,0 +1,11 @@
+.page-container {
+    position: relative;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Comic Sans MS';
+}
+
+.profile-picture {
+    width: 50px;
+}
